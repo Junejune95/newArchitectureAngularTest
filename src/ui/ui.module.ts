@@ -1,7 +1,9 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '@ui/app/app-routing.module';
 import { AppComponent } from '@ui/app/app.component';
+import { ServiceModule } from '@service/service.module';
+import { DataModule } from '@data/data.module';
 
 @NgModule({
     declarations: [
@@ -9,7 +11,9 @@ import { AppComponent } from '@ui/app/app.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ServiceModule,
+        DataModule
     ],
     providers: [],
     bootstrap: [AppComponent]
