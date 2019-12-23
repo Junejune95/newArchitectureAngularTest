@@ -1,0 +1,15 @@
+<label class="d-flex flex-fill flex-column">
+    <input
+        #single
+        [formControl]="control"
+        [placeholder]="hint"
+        *ngIf="!multiline"
+        [type]="type"/>
+
+    <textarea
+        #multi
+        [formControl]="control"
+        [rows]="rows"
+        *ngIf="multiline"
+        [placeholder]="hint"></textarea>
+</label>

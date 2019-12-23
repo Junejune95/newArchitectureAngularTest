@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-6 mb-3" *ngFor="let item of items">
+        <app-employee-list-item [item]="item" (click)="itemClick(item)">
+
+        </app-employee-list-item>
+    </div>
+</div>
+

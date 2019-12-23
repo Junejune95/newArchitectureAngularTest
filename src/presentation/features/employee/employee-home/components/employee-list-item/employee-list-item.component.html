@@ -1,0 +1,17 @@
+<div class="card p-3 pointer">
+    <div class="d-flex flex-row justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+            <app-image [src]="item.imageURL"></app-image>
+
+            <div class="d-flex flex-column ml-3">
+                <app-text class="mb-1">{{item.fullName}}</app-text>
+                <app-text class="mb-1">{{item.email}}</app-text>
+                <app-text>{{item.description}}</app-text>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center">
+            <i-feather name="chevron-right"></i-feather>
+        </div>
+    </div>
+</div>
