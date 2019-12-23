@@ -9,4 +9,4 @@ import {UiModule} from '../ui.module';
     UiModule
   ]
 })
-export class CompoundComponentsModule { }
+export class ContainersModule { }
