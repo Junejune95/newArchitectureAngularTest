@@ -32,9 +32,9 @@ const icons = {
     ],
     imports: [
         CommonModule,
+        FeatherModule.pick(icons),
         BasicComponentsModule,
-        RouterModule,
-        FeatherModule.pick(icons), // Add external icon library
+        RouterModule
     ]
 })
 export class EmployeeHome {

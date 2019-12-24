@@ -23,7 +23,7 @@ export class BusinessLogicRequirementsFake implements BusinessLogicRequirements 
         return of(employees);
     }
 
-    saveCustomer(employee): Observable<boolean> {
+    saveEmployee(employee): Observable<boolean> {
         return of(true);
     }
 }

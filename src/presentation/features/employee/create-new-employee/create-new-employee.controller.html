@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <app-header></app-header>
+
+    <div class="row mb-4">
+        <div class="col">
+            <app-text-input hint="Type your name" label="Display name" [control]="form.get('fullName')">
+
+            </app-text-input>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col">
+            <app-text-input hint="Type your email" label="Email" [control]="form.get('email')">
+
+            </app-text-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <app-text-input hint="Type your description" label="Description" [control]="form.get('description')" [multiline]="true">
+
+            </app-text-input>
+        </div>
+    </div>
+
+    <app-footer (onSave)="saveEmployee()" [disabled]="form.invalid"></app-footer>
+</div>

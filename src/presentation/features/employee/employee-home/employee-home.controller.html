@@ -1,6 +1,5 @@
 <div class="container mt-4">
     <app-header route="/new"></app-header>
     <app-search-bar [control]="form.get('searchBox')"></app-search-bar>
-
-    <app-employee-list [items]="$items | async" (onItemClick)="viewCustomerDetails($event)"></app-employee-list>
+    <app-employee-list [items]="$items | async" (onItemClick)="viewEmployeeDetails($event)"></app-employee-list>
 </div>

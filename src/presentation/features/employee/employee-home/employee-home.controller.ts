@@ -32,13 +32,14 @@ export class EmployeeHomeControllerComponent implements OnInit {
         ).subscribe()
 
         this.$items = this.getAllEmpoyees();
+        console.log(this.$items)
     }
 
     searchCustomerTap({searchBox}) {
         this.$items = searchBox === '' ? this.getAllEmpoyees() : this.searchCustomer(searchBox);
     }
 
-    viewCustomerDetails(customer) {}
+    viewEmployeeDetails(customer) {}
 
     private getAllEmpoyees() {
         return this.mapper.mapAll(this.business.getAllEmployees());
