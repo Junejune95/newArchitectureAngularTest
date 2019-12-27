@@ -31,7 +31,7 @@ export class BusinessLogicFacade implements BusinessLogicRequirements {
         return this.employee.searchCustomer(name);
     }
 
-    saveEmployee(employee: EmployeeModel): Observable<boolean> {
+    saveEmployee(employee: EmployeeModel): Observable<object> {
         const employeeMutated = {
             id: employee.id,
             name: employee.employeeName,
@@ -40,5 +40,8 @@ export class BusinessLogicFacade implements BusinessLogicRequirements {
         }
 
         return this.employee.save(employeeMutated);
+    }
+    getEmployeeById(id): Observable<object> {
+        return this.employee.getEmployeeById(id);
     }
 }

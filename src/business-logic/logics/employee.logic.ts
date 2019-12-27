@@ -9,27 +9,35 @@ export class EmployeeLogic {
 
     private mapCustomerWithImageAndLS(employees: Observable<any>): Observable<any> {
         const employeesFromLocalStorage = this.data.getEmployeesFromLS();
-        const mappedEmployees = new BehaviorSubject<any>(employeesFromLocalStorage)
-
-        employees.subscribe(employees => {
-            for (const employee of employees) {
-                this.data.getEmployeeImage(employee.id).subscribe(data => {
-                    const mergedEmployee = {
-                        ...employee, imageURL : data.imageURL
-                    }
-
-                    mappedEmployees.next([...mappedEmployees.getValue(), mergedEmployee]);
-                });
-            }
-        })
+        const employeesFromAPI = this.data.getAllEmployees();
+        console.log(employeesFromAPI)
+        const mappedEmployees = new BehaviorSubject<any>(employeesFromAPI)
+        console.log(employees)
+        // employees.subscribe(employees => {
+        //     for (const employee of employees.items) {
+        //         this.data.getEmployeeImage(employee.id).subscribe(data => {
+        //             const mergedEmployee = {
+        //                 ...employee, imageURL : data.imageURL
+        //             }
+        //
+        //             mappedEmployees.next([...mappedEmployees.getValue(), mergedEmployee]);
+        //         });
+        //     }
+        // })
 
         return mappedEmployees.asObservable();
     }
 
-    getAllCustomersWithImages(): Observable<any> {
-        const users = this.data.getAllEmployees()
+   getAllCustomersWithImages() {
+       //  const users = this.data.getAllEmployees();
+       //  console.log(users);
+       // return users;
+        // return this.mapCustomerWithImageAndLS(users);
 
-        return this.mapCustomerWithImageAndLS(users);
+
+       const books = this.data.getAllEmployees()
+
+       return books;
     }
 
     searchCustomer(name): Observable<any> {
@@ -39,7 +47,11 @@ export class EmployeeLogic {
     }
 
     save(employee)  {
-        console.log(employee)
+        console.warn(employee)
         return this.data.saveEmployee(employee);
+    }
+    getEmployeeById(id) {
+        console.warn(id)
+        return this.data.getEmployeeById(id);
     }
 }

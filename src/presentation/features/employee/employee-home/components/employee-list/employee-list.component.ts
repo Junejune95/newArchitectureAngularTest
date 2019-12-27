@@ -11,6 +11,7 @@ export class EmployeeListComponent {
     @Input('items') items: EmployeeModel[] = []
     @Output() onItemClick = new EventEmitter<EmployeeModel>()
 
+    public  tableColumns = ['Employee Name', 'Employee Age', 'Employee Salary', 'Action'];
     itemClick(item) {
         this.onItemClick.emit(item);
     }

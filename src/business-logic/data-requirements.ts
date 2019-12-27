@@ -4,13 +4,16 @@ import {Observable} from 'rxjs';
 export interface DataRequirements {
     getAllEmployees(): Observable<any>;
 
+    getEmployeeById(id): Observable<object>;
+
     getEmployeeImage(id): Observable<any>;
 
     searchEmployees(name): Observable<any>;
 
-    saveEmployee(employee): Observable<boolean>;
+    saveEmployee(employee): Observable<object>;
 
-    getEmployeesFromLS(): Observable<any>;
+    getEmployeesFromLS(): any[];
+
 }
 
 export const DataRequirementsInjectionToken = new InjectionToken<DataRequirements>('Data Requirements')

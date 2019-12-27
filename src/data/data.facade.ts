@@ -15,8 +15,29 @@ export class DataFacade implements DataRequirements {
         private employeeApi: EmployeeApi
     ) {}
 
-    getAllEmployees(): Observable<any> {
+     getAllEmployees(): Observable<any> {
         return this.employeeApi.getEmployees();
+        // let  resData: Observable<any>;
+        // this.employeeApi.getEmployees().subscribe((res) => {
+        //     console.warn(res);
+        //     resData = res;
+        //  });
+        // console.warn(resData)
+        // return  resData;
+         // return new Promise((resolve, reject) => {
+         //     this.employeeApi.getEmployees().subscribe(data => {
+         //         console.warn(data)
+         //         resolve(data);
+         //     });
+         // });
+        // let resData;
+        // const promise = this.employeeApi.getEmployees().toPromise();
+        // promise.then((data) => {
+        //     resData = data;
+        //     console.warn(resData);
+        // });
+        // console.warn(resData);
+        // return resData;
     }
 
     getEmployeeImage(id): Observable<any> {
@@ -27,12 +48,18 @@ export class DataFacade implements DataRequirements {
         return this.employeeApi.searchEmployees(name);
     }
 
-    getEmployeesFromLS(): Observable<any>  {
+    getEmployeesFromLS(): any[] {
         return this.employeeApi.getEmployeesLS();
     }
 
-    saveEmployee(user): Observable<boolean> {
+    saveEmployee(user): Observable<object> {
         console.log('in there ')
-        return this.employeeApi.saveEmployeeLS(user);
+        // return this.employeeApi.saveEmployeeLS(user);
+        return this.employeeApi.saveEmployee(user);
+
+    }
+    getEmployeeById(id): Observable<object> {
+        console.warn(id);
+        return this.employeeApi.getEmployeeById(id);
     }
 }

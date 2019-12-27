@@ -7,7 +7,8 @@ export interface BusinessLogicRequirements {
 
     getAllEmployees(): Observable<any>;
 
-    saveEmployee(employee: EmployeeModel): Observable<boolean>;
+    saveEmployee(employee: EmployeeModel): Observable<object>;
+    getEmployeeById(id): Observable<object>;
 }
 
 export const BusinessRequirementsInjectionToken = new InjectionToken<BusinessLogicRequirements>('Business Requirements')

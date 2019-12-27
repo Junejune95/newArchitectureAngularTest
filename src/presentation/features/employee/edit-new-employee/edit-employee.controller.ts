@@ -7,10 +7,10 @@ import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-create-new-employee',
-    templateUrl: './create-new-employee.controller.html',
-    styleUrls: ['./create-new-employee.controller.css'],
+    templateUrl: './edit-employee.controller.html',
+    styleUrls: ['./edit-employee.controller.css'],
 })
-export class CreateNewEmployeeController implements OnInit {
+export class EditEmployeeController implements OnInit {
     private form = this.fb.group({
         'employeeName': this.fb.control('', [Validators.required]),
         'employeeAge': this.fb.control('', [Validators.required]),
@@ -29,9 +29,16 @@ export class CreateNewEmployeeController implements OnInit {
         this.form.valueChanges.subscribe(value => {
             this.employee = value;
         });
+        this.employee = this.getempById('1');
     }
 
-    saveEmployee() {
+    private getempById(id) {
+        console.warn(id)
+        const  employee = this.business.getEmployeeById(id);
+        console.warn(employee)
+        return employee;
+    }
+    editEmployee() {
         console.log(this.employee);
         console.warn(' in save');
         this.business.saveEmployee({

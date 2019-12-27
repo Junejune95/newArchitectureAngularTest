@@ -29,10 +29,8 @@ export class EmployeeHomeControllerComponent implements OnInit {
             debounceTime(150),
             distinctUntilChanged(),
             tap(value => this.searchCustomerTap(value))
-        ).subscribe()
-
+        ).subscribe();
         this.$items = this.getAllEmpoyees();
-        console.log(this.$items)
     }
 
     searchCustomerTap({searchBox}) {
@@ -42,7 +40,9 @@ export class EmployeeHomeControllerComponent implements OnInit {
     viewEmployeeDetails(customer) {}
 
     private getAllEmpoyees() {
-        return this.mapper.mapAll(this.business.getAllEmployees());
+        const  employee = this.business.getAllEmployees();
+        console.warn(employee)
+        return this.mapper.mapAll(employee);
     }
 
     private searchCustomer(value) {

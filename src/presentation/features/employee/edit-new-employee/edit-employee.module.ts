@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BasicComponentsModule} from '@basic-components/basic.components.module';
-import {CreateNewEmployeeController} from '@features/employee/create-new-employee/create-new-employee.controller';
-import {HeaderComponent} from '@features/employee/create-new-employee/header/header.component';
 import {Home} from 'angular-feather/icons';
 import {FeatherModule} from 'angular-feather';
 import {RouterModule} from '@angular/router';
-import {TextInputComponent} from '@features/employee/create-new-employee/text-input/text-input.component';
-import {FooterComponent} from '@features/employee/create-new-employee/footer/footer.component';
+import {EditEmployeeController} from '@features/employee/edit-new-employee/edit-employee.controller';
+import {HeaderComponent} from '@features/employee/edit-new-employee/header/header.component';
+import {FooterComponent} from '@features/employee/edit-new-employee/footer/footer.component';
+import {TextInputComponent} from '@features/employee/edit-new-employee/text-input/text-input.component';
 
 const icons = {
     Home
@@ -15,14 +15,13 @@ const icons = {
 
 @NgModule({
     declarations: [
-        CreateNewEmployeeController,
-
+        EditEmployeeController,
         HeaderComponent,
         FooterComponent,
         TextInputComponent
     ],
     exports: [
-        CreateNewEmployeeController
+        EditEmployeeController
     ],
     providers: [
 
@@ -34,6 +33,6 @@ const icons = {
         RouterModule,
     ]
 })
-export class CreateNewEmployee {
+export class EditEmployee {
 
 }

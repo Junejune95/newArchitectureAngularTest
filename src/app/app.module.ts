@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import {Github} from 'angular-feather/icons';
 import {FeatherModule} from 'angular-feather';
 import {EmployeeFeature} from '@features/employee/employee-feature.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 const icons = {
     Github
@@ -21,6 +22,7 @@ const icons = {
         AppRoutingModule,
         EmployeeFeature,
         FeatherModule.pick(icons),
+        AngularFontAwesomeModule
     ],
     bootstrap: [AppComponent]
 })

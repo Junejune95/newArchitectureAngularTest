@@ -5,12 +5,17 @@ import {TextComponent} from '@basic-components/text/text.component';
 import {ButtonComponent} from '@basic-components/button/button.component';
 import {InputComponent} from '@basic-components/input/input.component';
 import {ImageComponent} from '@basic-components/image/image.component';
+import {TableComponent} from '@basic-components/table/table.component';
+import {BtnlinkComponent} from '@basic-components/btnLink/btnlink.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 const components = [
     TextComponent,
     ButtonComponent,
     InputComponent,
-    ImageComponent
+    ImageComponent,
+    TableComponent,
+    BtnlinkComponent
 ];
 
 @NgModule({
@@ -19,6 +24,7 @@ const components = [
     imports: [
         CommonModule,
         ReactiveFormsModule,
+        AngularFontAwesomeModule
     ]
 })
 export class BasicComponentsModule {
