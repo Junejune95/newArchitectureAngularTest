@@ -58,4 +58,7 @@ export class DataRequirementsFake implements DataRequirements {
     getEmployeeById(employee): Observable<object> {
         return employee;
     }
+    editEmployee(employee): Observable<object> {
+        return employee;
+    }
 }

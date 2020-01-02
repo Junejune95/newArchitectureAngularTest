@@ -22,4 +22,8 @@ export class TableComponent {
     callEdit(id) {
         this.router.navigateByUrl('/edit/' + id);
     }
+
+    callDetail(id) {
+        this.router.navigateByUrl('/detail/' + id);
+    }
 }
