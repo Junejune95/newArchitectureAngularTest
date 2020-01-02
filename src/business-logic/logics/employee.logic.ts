@@ -60,4 +60,9 @@ export class EmployeeLogic {
         const employee = this.data.getEmployeeById(id);
         return employee;
     }
+    deleteEmployee(id) {
+        console.warn(id);
+        const employee = this.data.deleteEmployee(id);
+        return employee;
+    }
 }

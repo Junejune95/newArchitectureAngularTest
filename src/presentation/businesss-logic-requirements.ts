@@ -9,7 +9,7 @@ export interface BusinessLogicRequirements {
 
     saveEmployee(employee: EmployeeModel): Observable<object>;
     editEmployee(employee: EmployeeModel): Observable<object>;
-
+    deleteEmployee(id): Observable<any>;
     getEmployeeById(id): Observable<any>;
 }
 

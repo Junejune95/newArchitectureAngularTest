@@ -5,7 +5,7 @@ export interface DataRequirements {
     getAllEmployees(): Observable<any>;
 
     getEmployeeById(id): Observable<any>;
-
+    deleteEmployee(id): Observable<any>;
     getEmployeeImage(id): Observable<any>;
 
     searchEmployees(name): Observable<any>;

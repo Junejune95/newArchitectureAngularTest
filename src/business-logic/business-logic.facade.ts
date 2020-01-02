@@ -53,6 +53,11 @@ export class BusinessLogicFacade implements BusinessLogicRequirements {
         return this.employee.edit(employeeMutated);
     }
     getEmployeeById(id): Observable<any> {
+        console.warn(id);
         return this.employee.getEmployeeById(id);
+    }
+    deleteEmployee(id): Observable<any> {
+        console.warn(id);
+        return this.employee.deleteEmployee(id);
     }
 }

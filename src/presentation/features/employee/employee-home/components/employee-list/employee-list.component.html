@@ -7,6 +7,6 @@
 <!--</div>-->
 
 <div class="row">
-    <app-table [tableColumns]="tableColumns" [items]="items"></app-table>
+    <app-table [tableColumns]="tableColumns" [items]="items" (onDelete)="onDelete($event)"></app-table>
 </div>
 

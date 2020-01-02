@@ -66,4 +66,9 @@ export class DataFacade implements DataRequirements {
         console.warn(id);
         return this.employeeApi.getEmployeeById(id);
     }
+
+    deleteEmployee(id): Observable<any> {
+        console.warn(id)
+        return this.employeeApi.deleteEmployee(id);
+    }
 }

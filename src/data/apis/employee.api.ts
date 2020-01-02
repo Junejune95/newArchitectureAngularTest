@@ -61,4 +61,10 @@ export class EmployeeApi {
         return this.http.get<any>('http://dummy.restapiexample.com/api/v1/employee/' + id)
             .pipe(map(obj => obj || {}));
     }
+
+    deleteEmployee(id): Observable<any> {
+        console.warn(id);
+        return this.http.delete<any>('http://dummy.restapiexample.com/api/v1/delete/' + id)
+            .pipe(map(obj => obj || {}));
+    }
 }

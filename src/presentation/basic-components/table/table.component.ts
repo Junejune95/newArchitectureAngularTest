@@ -12,6 +12,7 @@ export class TableComponent {
     @Input() tableColumns: any = [];
     @Input() items: any [];
     @Output() onEdit  = new EventEmitter<any>();
+    @Output() onDelete= new EventEmitter<any>();
     @Input() disabled = false;
     constructor(private router: Router) {
     }
@@ -25,5 +26,13 @@ export class TableComponent {
 
     callDetail(id) {
         this.router.navigateByUrl('/detail/' + id);
+    }
+
+    callDelete(emp) {
+       const isOk = confirm('Are u sure to delete employee name >>' + emp.employee_name);
+       console.warn(isOk);
+       if (isOk) {
+           this.onDelete.emit(emp.id);
+       }
     }
 }

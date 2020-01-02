@@ -48,4 +48,12 @@ export class EmployeeHomeControllerComponent implements OnInit {
     private searchCustomer(value) {
         return this.mapper.mapAll(this.business.searchEmployee(value));
     }
+
+    onEmployeeDelete(id) {
+        console.warn(id);
+        this.business.deleteEmployee(id).subscribe(res => {
+            console.log(res);
+            this.$items = this.getAllEmpoyees();
+        });
+    }
 }

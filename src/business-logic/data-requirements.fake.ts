@@ -61,4 +61,7 @@ export class DataRequirementsFake implements DataRequirements {
     editEmployee(employee): Observable<object> {
         return employee;
     }
+    deleteEmployee(employee): Observable<any> {
+        return employee;
+    }
 }

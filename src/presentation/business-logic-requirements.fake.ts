@@ -32,4 +32,7 @@ export class BusinessLogicRequirementsFake implements BusinessLogicRequirements 
     getEmployeeById(id): Observable<any> {
         return of(id);
     }
+    deleteEmployee(id): Observable<any> {
+        return of(id);
+    }
 }

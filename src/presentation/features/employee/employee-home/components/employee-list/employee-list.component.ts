@@ -10,10 +10,14 @@ export class EmployeeListComponent {
 
     @Input('items') items: EmployeeModel[] = []
     @Output() onItemClick = new EventEmitter<EmployeeModel>()
-
+    @Output() onEmployeeDelete= new EventEmitter<any>();
     public  tableColumns = ['Employee Name', 'Employee Age', 'Employee Salary', 'Action'];
     itemClick(item) {
         this.onItemClick.emit(item);
     }
 
+    onDelete(e) {
+        console.warn(e);
+        this.onEmployeeDelete.emit(e);
+    }
 }
