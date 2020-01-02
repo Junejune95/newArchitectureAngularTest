@@ -4,6 +4,8 @@ import {BusinessLogicRequirementsFake} from '@presentation/business-logic-requir
 import {BusinessLogicFacade} from '@business-logic/business-logic.facade';
 
 @NgModule({
+    declarations: [
+    ],
     imports: [
         BusinessLogicFacade
     ],

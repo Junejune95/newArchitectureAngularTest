@@ -8,6 +8,7 @@ import {ImageComponent} from '@basic-components/image/image.component';
 import {TableComponent} from '@basic-components/table/table.component';
 import {BtnlinkComponent} from '@basic-components/btnLink/btnlink.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {SearchPipe} from '@presentation/pipes/search.pipe';
 
 const components = [
     TextComponent,
@@ -15,7 +16,8 @@ const components = [
     InputComponent,
     ImageComponent,
     TableComponent,
-    BtnlinkComponent
+    BtnlinkComponent,
+    SearchPipe
 ];
 
 @NgModule({
