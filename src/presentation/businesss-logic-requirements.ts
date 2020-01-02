@@ -8,6 +8,8 @@ export interface BusinessLogicRequirements {
     getAllEmployees(): Observable<any>;
 
     saveEmployee(employee: EmployeeModel): Observable<object>;
+    editEmployee(employee: EmployeeModel): Observable<object>;
+
     getEmployeeById(id): Observable<any>;
 }
 

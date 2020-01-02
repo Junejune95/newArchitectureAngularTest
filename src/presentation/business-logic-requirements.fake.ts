@@ -26,6 +26,9 @@ export class BusinessLogicRequirementsFake implements BusinessLogicRequirements 
     saveEmployee(employee): Observable<object> {
         return employee;
     }
+    editEmployee(employee): Observable<object> {
+        return employee;
+    }
     getEmployeeById(id): Observable<any> {
         return of(id);
     }

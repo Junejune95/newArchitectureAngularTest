@@ -11,7 +11,7 @@ export interface DataRequirements {
     searchEmployees(name): Observable<any>;
 
     saveEmployee(employee): Observable<object>;
-
+    editEmployee(employee): Observable<object>;
     getEmployeesFromLS(): any[];
 
 }

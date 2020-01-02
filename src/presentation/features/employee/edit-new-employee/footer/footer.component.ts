@@ -16,6 +16,6 @@ export class FooterComponent implements OnInit {
     }
 
     saveButtonClicked() {
-        this.onSave.emit()
+        this.onSave.emit();
     }
 }

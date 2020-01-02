@@ -57,6 +57,11 @@ export class DataFacade implements DataRequirements {
         // return this.employeeApi.saveEmployeeLS(user);
         return this.employeeApi.saveEmployee(user);
     }
+    editEmployee(employee): Observable<object> {
+        console.log('in there ')
+        // return this.employeeApi.saveEmployeeLS(user);
+        return this.employeeApi.editEmployee(employee);
+    }
     getEmployeeById(id): Observable<any> {
         console.warn(id);
         return this.employeeApi.getEmployeeById(id);

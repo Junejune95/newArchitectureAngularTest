@@ -45,6 +45,17 @@ export class EmployeeApi {
         console.log(this.http.post(url, employee , httpOptions))
         return this.http.post(url, employee , httpOptions);
     }
+    editEmployee(employee) {
+        console.warn(employee)
+        const url = 'http://dummy.restapiexample.com/api/v1/update/' + employee.id;
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+        console.log(this.http.post(url, employee , httpOptions))
+        return this.http.put(url, employee , httpOptions);
+    }
     getEmployeeById(id): Observable<any> {
         console.warn(id);
         return this.http.get<any>('http://dummy.restapiexample.com/api/v1/employee/' + id)

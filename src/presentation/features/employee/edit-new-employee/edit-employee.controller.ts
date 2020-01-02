@@ -17,7 +17,7 @@ export class EditEmployeeController implements OnInit {
         'employeeSalary': this.fb.control('', [Validators.required])
     });
     private employee = null
-
+    private id: any;
     constructor(
         private router: Router,
         private fb: FormBuilder,
@@ -30,9 +30,9 @@ export class EditEmployeeController implements OnInit {
     }
 
     ngOnInit() {
-        const id =  this.activeRoute.snapshot.paramMap.get('id');
-        console.warn(id, '<<id>>' );
-        this.getempById(id);
+       this.id =  this.activeRoute.snapshot.paramMap.get('id');
+       console.warn(this.id, '<<id>>' );
+       this.getempById(this.id);
     }
 
     private getempById(id) {
@@ -49,9 +49,10 @@ export class EditEmployeeController implements OnInit {
     }
     editEmployee() {
         console.log(this.employee);
-        console.warn(' in save');
-        this.business.saveEmployee({
-            ...this.employee
+        console.warn(' in edit');
+        this.business.editEmployee({
+            ...this.employee,
+            id: this.id
         }).subscribe(status => {
             console.warn(status);
 

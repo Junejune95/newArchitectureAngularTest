@@ -50,6 +50,11 @@ export class EmployeeLogic {
         console.warn(employee)
         return this.data.saveEmployee(employee);
     }
+
+    edit(employee)  {
+        console.warn(employee)
+        return this.data.editEmployee(employee);
+    }
     getEmployeeById(id) {
         console.warn(id);
         const employee = this.data.getEmployeeById(id);
