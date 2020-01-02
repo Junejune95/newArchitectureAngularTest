@@ -10,7 +10,7 @@ export class BusinessLogicRequirementsFake implements BusinessLogicRequirements 
             employees.push(new EmployeeModel());
         }
 
-        return of(employees)
+        return of(employees);
     }
 
     getAllEmployees(): Observable<any> {
@@ -23,7 +23,10 @@ export class BusinessLogicRequirementsFake implements BusinessLogicRequirements 
         return of(employees);
     }
 
-    saveEmployee(employee): Observable<boolean> {
-        return of(true);
+    saveEmployee(employee): Observable<object> {
+        return employee;
+    }
+    getEmployeeById(id): Observable<any> {
+        return of(id);
     }
 }

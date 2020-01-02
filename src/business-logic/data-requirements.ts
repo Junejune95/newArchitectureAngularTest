@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 export interface DataRequirements {
     getAllEmployees(): Observable<any>;
 
-    getEmployeeById(id): Observable<object>;
+    getEmployeeById(id): Observable<any>;
 
     getEmployeeImage(id): Observable<any>;
 

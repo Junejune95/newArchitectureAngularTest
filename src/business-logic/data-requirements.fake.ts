@@ -52,7 +52,10 @@ export class DataRequirementsFake implements DataRequirements {
         }];
     }
 
-    saveEmployee(employee): Observable<boolean> {
-        return of(true);
+    saveEmployee(employee): Observable<object> {
+        return employee;
+    }
+    getEmployeeById(employee): Observable<object> {
+        return employee;
     }
 }

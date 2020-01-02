@@ -33,7 +33,7 @@ export class EmployeeLogic {
        //  console.log(users);
        // return users;
         // return this.mapCustomerWithImageAndLS(users);
-
+       console.log('hello');
 
        const books = this.data.getAllEmployees()
 
@@ -51,7 +51,8 @@ export class EmployeeLogic {
         return this.data.saveEmployee(employee);
     }
     getEmployeeById(id) {
-        console.warn(id)
-        return this.data.getEmployeeById(id);
+        console.warn(id);
+        const employee = this.data.getEmployeeById(id);
+        return employee;
     }
 }

@@ -19,7 +19,7 @@ export class TableComponent {
         this.onEdit.emit();
     }
 
-    callEdit() {
-        this.router.navigateByUrl('/edit');
+    callEdit(id) {
+        this.router.navigateByUrl('/edit/' + id);
     }
 }

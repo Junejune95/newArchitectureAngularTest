@@ -41,7 +41,7 @@ export class BusinessLogicFacade implements BusinessLogicRequirements {
 
         return this.employee.save(employeeMutated);
     }
-    getEmployeeById(id): Observable<object> {
+    getEmployeeById(id): Observable<any> {
         return this.employee.getEmployeeById(id);
     }
 }

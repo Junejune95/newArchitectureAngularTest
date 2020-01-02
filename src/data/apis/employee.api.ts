@@ -8,7 +8,7 @@ export class EmployeeApi {
 
     getEmployees(): Observable<any> {
         console.warn('call api');
-        return this.http.get<any>('http://dummy.restapiexample.com/api/v1/employees ')
+        return this.http.get<any>('http://dummy.restapiexample.com/api/v1/employees')
             .pipe(map(obj => obj || []));
     }
 
@@ -42,14 +42,12 @@ export class EmployeeApi {
                 'Content-Type': 'application/json'
             })
         };
+        console.log(this.http.post(url, employee , httpOptions))
         return this.http.post(url, employee , httpOptions);
     }
-    getEmployeeById(id): Observable<object> {
-        console.warn(id)
-        const gg = this.http.get<any>('http://dummy.restapiexample.com/api/v1/employee/240387');
-        console.log(gg);
-        // console.log(this.http.get<any>('http://dummy.restapiexample.com/api/v1/employee/240387')) ;
-        // return this.http.get<any>('http://dummy.restapiexample.com/api/v1/employee/240387');
-        return  null;
+    getEmployeeById(id): Observable<any> {
+        console.warn(id);
+        return this.http.get<any>('http://dummy.restapiexample.com/api/v1/employee/' + id)
+            .pipe(map(obj => obj || {}));
     }
 }

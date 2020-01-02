@@ -3,7 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {EmployeeModel} from '@models/employee.model';
 import {Observable, of} from 'rxjs';
 import {BusinessLogicRequirements, BusinessRequirementsInjectionToken} from '@presentation/businesss-logic-requirements';
-import {Router} from '@angular/router';
+import {Router , ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'app-create-new-employee',
@@ -15,28 +15,37 @@ export class EditEmployeeController implements OnInit {
         'employeeName': this.fb.control('', [Validators.required]),
         'employeeAge': this.fb.control('', [Validators.required]),
         'employeeSalary': this.fb.control('', [Validators.required])
-    })
-
+    });
     private employee = null
 
     constructor(
         private router: Router,
         private fb: FormBuilder,
+        private  activeRoute: ActivatedRoute ,
         @Inject(BusinessRequirementsInjectionToken) private business: BusinessLogicRequirements
-    ) {}
-
-    ngOnInit() {
+    ) {
         this.form.valueChanges.subscribe(value => {
             this.employee = value;
         });
-        this.employee = this.getempById('1');
+    }
+
+    ngOnInit() {
+        const id =  this.activeRoute.snapshot.paramMap.get('id');
+        console.warn(id, '<<id>>' );
+        this.getempById(id);
     }
 
     private getempById(id) {
-        console.warn(id)
-        const  employee = this.business.getEmployeeById(id);
-        console.warn(employee)
-        return employee;
+        this.business.getEmployeeById(id).subscribe(res => {
+            console.log(res);
+            const employee = res;
+            this.form.controls['employeeName'].setValue(res.employee_name);
+            this.form.controls['employeeAge'].setValue(res.employee_age);
+            this.form.controls['employeeSalary'].setValue(res.employee_salary);
+
+            console.warn(id)
+            console.warn(employee);
+        });
     }
     editEmployee() {
         console.log(this.employee);
